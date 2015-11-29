@@ -24,7 +24,7 @@ import(
 	{{if .needsStrings}}"strings"{{end}}
 )
 
-func ({{.variableName}} *{{.structName}}) FieldMap(r *http.Request) binding.FieldMap {
+func ({{.variableName}} *{{.structName}}) FieldMap(request *http.Request) binding.FieldMap {
 	return binding.FieldMap{ {{$vname := .variableName}}{{range $field, $mapping := .mappings}}
 			&{{$vname}}.{{$field}}: {{$mapping}},{{end}}
 	}
