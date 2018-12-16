@@ -47,7 +47,7 @@ var enumBinding = `binding.Field{
 					errs.Add([]string{fieldName}, binding.DeserializationError, formVals[0])
 				}
 				enum := {{.mappingType}}(val)
-				{{.variableName}}.{{.mappingFieldName}} = &enum
+				{{.variableName}}.{{.mappingFieldName}} = enum
 				return errs
 			},
 		}`
